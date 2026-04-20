@@ -1,0 +1,128 @@
+/* Базовые настройки */
+body {
+    background-color: #121212;
+    color: #a0a0a0;
+    font-family: 'Inter', -apple-system, sans-serif;
+    margin: 0;
+    padding: 60px 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.header h1 {
+    color: #e0e0e0;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Карточки заданий */
+.task-card {
+    background-color: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 500px) {
+    .task-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+.step-number {
+    font-size: 0.7rem;
+    color: #444;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #c0c0c0;
+    font-weight: 400;
+}
+
+/* Демо-зоны */
+.demo-area {
+    background: #0f0f0f;
+    width: 180px;
+    height: 100px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- ЗАДАНИЕ №1: Transition --- */
+.task-button {
+    background-color: #333d47;
+    color: #aeb8c4;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+.task-button:hover {
+    background-color: #44505e;
+    transform: scale(1.1);
+}
+
+/* --- ЗАДАНИЕ №2: Постоянный Fade-in --- */
+.fade-box {
+    width: 50px;
+    height: 50px;
+    background-color: #4a5450;
+    border-radius: 4px;
+    /* Теперь анимация бесконечная (infinite) и плавно возвращается (alternate) */
+    animation: fadeInOut 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0.1; /* Чтобы блок не исчезал совсем в ноль */
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* --- ЗАДАНИЕ №3: Движение --- */
+.moving-square {
+    width: 35px;
+    height: 35px;
+    background-color: #5a6270;
+    border-radius: 4px;
+    animation: slideAction 3s ease-in-out infinite alternate;
+}
+
+@keyframes slideAction {
+    0% {
+        transform: translateX(-50px);
+    }
+    100% {
+        transform: translateX(50px);
+    }
+}
